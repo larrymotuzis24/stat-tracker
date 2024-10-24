@@ -1,0 +1,30 @@
+/* stat-sheet.css */
+.stat-sheet {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .stat-sheet th, .stat-sheet td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .stat-sheet th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .stat-sheet td {
+    font-size: 14px;
+  }
+  
+  .stat-sheet tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .stat-sheet tr:hover {
+    background-color: #f1f1f1;
+  }
+  

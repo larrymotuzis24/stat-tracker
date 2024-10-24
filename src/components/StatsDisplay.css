@@ -1,0 +1,45 @@
+.stats-display {
+    padding: 20px;
+  }
+  
+  .stats-navigation {
+    margin-bottom: 20px;
+  }
+  
+  .stats-navigation button {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  .stat-sheet {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .stat-sheet th, .stat-sheet td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .stat-sheet th {
+    background-color: #f4f4f4;
+  }
+  
+  .stats-navigation {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .stats-navigation button {
+    margin-right: 2px; /* Adds 2px space between buttons */
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .stats-navigation button:last-child {
+    margin-right: 0; /* Removes the margin after the last button */
+  }
+  

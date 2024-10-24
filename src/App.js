@@ -1,19 +1,29 @@
+import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import PlayerList from './components/PlayerList';
 import StatsDisplay from './components/StatsDisplay';
-import './App.css';
+
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* Define the routes */}
+        <nav>
+          <ul>
+            <li>
+              <Link to="/stat-tracker">Home </Link>
+            </li>
+            <li>
+              <Link to="/stats">Stats Display</Link>
+            </li>
+          </ul>
+        </nav>
+
         <Routes>
-          {/* Set PlayerList to be the default route (/) */}
-          <Route path="/" element={<PlayerList />} />
-          {/* Route for StatsDisplay page */}
+          <Route path="/stat-tracker" element={<PlayerList />} />
           <Route path="/stats" element={<StatsDisplay />} />
+       
         </Routes>
       </div>
     </Router>
@@ -21,4 +31,3 @@ function App() {
 }
 
 export default App;
-

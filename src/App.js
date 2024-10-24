@@ -12,7 +12,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home </Link>
+              <Link to="/stat-tracker">Home </Link>
             </li>
             <li>
               <Link to="/stats">Stats Display</Link>
@@ -21,7 +21,7 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<PlayerList />} />
+          <Route path="/stat-tracker" element={<PlayerList />} />
           <Route path="/stats" element={<StatsDisplay />} />
        
         </Routes>

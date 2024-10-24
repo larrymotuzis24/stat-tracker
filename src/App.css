@@ -1,23 +1,19 @@
-nav {
-  margin-bottom: 20px;
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* Add space between the links */
+  padding: 10px; /* Add padding around the entire nav */
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 15px;
-}
-
-nav ul li a {
+.nav-links a {
   text-decoration: none;
-  font-size: 18px;
-  color: #007bff;
+  padding: 8px 16px; /* Add padding to individual links */
+  border-radius: 4px; /* Optional: make the links' corners rounded */
+  background-color: #f0f0f0; /* Optional: add a background to links */
+  color: #333; /* Link color */
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+.nav-links a:hover {
+  background-color: #e0e0e0; /* Change background on hover */
+  color: #000; /* Change text color on hover */
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const calculatePercentage = (made, attempted) => {
-  if (attempted === 0) return '0%';
+const calculatePercentage = (made = 0, attempted = 0) => {
+  if (attempted === 0) return '0%';  // Safeguard against 0 attempts
   return `${((made / attempted) * 100).toFixed(1)}%`;
 };
 
@@ -32,41 +32,41 @@ const PlayerTotals = ({ practiceStats, players }) => {
 
   return (
     <div>
-    <h2 style={{ textAlign: 'center' }}> Player Totals </h2>
-    <table className="stat-sheet">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>2pt FG Made</th>
-          <th>2pt FG Attempted</th>
-          <th>2pt FG %</th>
-          <th>3pt FG Made</th>
-          <th>3pt FG Attempted</th>
-          <th>3pt FG %</th>
-          <th>Assists</th>
-          <th>Turnovers</th>
-          <th>Off. Rebounds</th>
-          <th>Def. Rebounds</th>
-        </tr>
-      </thead>
-      <tbody>
-        {Object.keys(aggregatedStats).map((playerId) => (
-          <tr key={playerId}>
-            <td>{players[playerId] || 'Unknown'}</td>
-            <td>{aggregatedStats[playerId].twoPtMade || 0}</td>
-            <td>{aggregatedStats[playerId].twoPtAttempts || 0}</td>
-            <td>{calculatePercentage(aggregatedStats[playerId].twoPtMade, aggregatedStats[playerId].twoPtAttempts)}</td>
-            <td>{aggregatedStats[playerId].threePtMade || 0}</td>
-            <td>{aggregatedStats[playerId].threePtAttempts || 0}</td>
-            <td>{calculatePercentage(aggregatedStats[playerId].threePtMade, aggregatedStats[playerId].threePtAttempts)}</td>
-            <td>{aggregatedStats[playerId].assists || 0}</td>
-            <td>{aggregatedStats[playerId].turnovers || 0}</td>
-            <td>{aggregatedStats[playerId].offensiveRebounds || 0}</td>
-            <td>{aggregatedStats[playerId].defensiveRebounds || 0}</td>
+      <h2 style={{ textAlign: 'center' }}>Player Totals</h2>
+      <table className="stat-sheet">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>2pt FG Made</th>
+            <th>2pt FG Attempted</th>
+            <th>2pt FG %</th>
+            <th>3pt FG Made</th>
+            <th>3pt FG Attempted</th>
+            <th>3pt FG %</th>
+            <th>Assists</th>
+            <th>Turnovers</th>
+            <th>Off. Rebounds</th>
+            <th>Def. Rebounds</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {Object.keys(aggregatedStats).map((playerId) => (
+            <tr key={playerId}>
+              <td>{players[playerId] || 'Unknown'}</td>
+              <td>{aggregatedStats[playerId].twoPtMade || 0}</td>
+              <td>{aggregatedStats[playerId].twoPtAttempts || 0}</td>
+              <td>{calculatePercentage(aggregatedStats[playerId].twoPtMade || 0, aggregatedStats[playerId].twoPtAttempts || 0)}</td>
+              <td>{aggregatedStats[playerId].threePtMade || 0}</td>
+              <td>{aggregatedStats[playerId].threePtAttempts || 0}</td>
+              <td>{calculatePercentage(aggregatedStats[playerId].threePtMade || 0, aggregatedStats[playerId].threePtAttempts || 0)}</td>
+              <td>{aggregatedStats[playerId].assists || 0}</td>
+              <td>{aggregatedStats[playerId].turnovers || 0}</td>
+              <td>{aggregatedStats[playerId].offensiveRebounds || 0}</td>
+              <td>{aggregatedStats[playerId].defensiveRebounds || 0}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

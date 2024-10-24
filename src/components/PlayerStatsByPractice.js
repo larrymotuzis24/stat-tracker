@@ -1,7 +1,7 @@
 import React from 'react';
 import './stat-sheet.css'; // Assuming you're styling this
 
-const calculatePercentage = (made, attempted) => {
+const calculatePercentage = (made = 0, attempted = 0) => {
   if (attempted === 0) return '0%';
   return `${((made / attempted) * 100).toFixed(1)}%`;
 };
@@ -34,10 +34,10 @@ const PlayerStatsByPractice = ({ practiceStats, players }) => {
                   <td>{players[playerStat.playerId] || 'Unknown'}</td>
                   <td>{playerStat.twoPtMade || 0}</td>
                   <td>{playerStat.twoPtAttempts || 0}</td>
-                  <td>{calculatePercentage(playerStat.twoPtMade, playerStat.twoPtAttempts)}</td>
+                  <td>{calculatePercentage(playerStat.twoPtMade || 0, playerStat.twoPtAttempts || 0)}</td>
                   <td>{playerStat.threePtMade || 0}</td>
                   <td>{playerStat.threePtAttempts || 0}</td>
-                  <td>{calculatePercentage(playerStat.threePtMade, playerStat.threePtAttempts)}</td>
+                  <td>{calculatePercentage(playerStat.threePtMade || 0, playerStat.threePtAttempts || 0)}</td>
                   <td>{playerStat.assists || 0}</td>
                   <td>{playerStat.turnovers || 0}</td>
                   <td>{playerStat.offensiveRebounds || 0}</td>

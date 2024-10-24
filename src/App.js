@@ -9,10 +9,11 @@ function App() {
     <Router basename="/stat-tracker">
       <div className="App">
         {/* Navigation links */}
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/stats">Stats</Link>
-        </nav>
+        <nav className="nav-links">
+  <Link to="/">Home</Link>
+  <Link to="/stats">Stats</Link>
+</nav>
+
         {/* Define the routes */}
         <Routes>
           {/* Use exact path for home */}
